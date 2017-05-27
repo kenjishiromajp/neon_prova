@@ -1,0 +1,185 @@
+.slider{
+    padding: 0 66px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > .slider-container{
+        margin: 0 90px;
+        flex: 1;
+        height: 610px;
+        position: relative;
+        perspective: 1000px;
+        > .slide{
+            width: 100%;
+            backface-visibility: hidden;
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            will-change: transform, box-shadow, opacity;
+            transform-style: preserve-3d;
+            &.active{
+                opacity: 1;
+                visibility: visible;
+                header{
+                    figure{
+                        opacity: 0;
+                        will-change: opacity, transform;
+                        animation: bounceIn 0.6s 0.4s ease forwards;  
+                    }
+                    h3{
+                        opacity: 0;
+                        will-change: opacity, transform;
+                        animation: bounceIn 0.6s 0.55s ease forwards;  
+                    }
+                }
+                .card-body{
+                    overflow: hidden;
+                    p{
+                        opacity: 0;
+                        will-change: opacity, transform;
+                        animation: slideBottomIn 0.8s 0.6s ease forwards;
+                    }
+                    .button{
+                        opacity: 0;
+                        will-change: opacity, transform;
+                        animation: slideTopIn 0.5s 0.85s ease forwards;
+                    }
+                }
+            }
+            &.fade-out-left{
+                animation: fadeOutLeft 0.9s ease;
+            }
+            &.fade-in-left{
+                animation: fadeInLeft 0.9s ease;
+            }
+            &.fade-out-right{
+                animation: fadeOutRight 0.9s ease;
+            }
+            &.fade-in-right{
+                animation: fadeInRight 0.9s ease;
+            }
+
+            
+        }
+    }
+    .button.-button-right,
+    .button.-button-left{
+        flex-shrink: 0;
+        border-color: #d7d8da;
+        .icon{
+            color: #d7d8da;
+        }
+        &:hover{
+            .icon{
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+@media(max-width: 810px){
+    .slider{
+        padding: 0;
+        .slider-container{
+            margin: 0 15px;
+        }
+    }
+}
+
+@keyframes fadeOutLeft{
+    0%{
+        opacity: 1;
+        visibility: visible;
+        transform: rotateY(0deg) translateY(0px);
+        box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 0.15);
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        transform: rotateY(-180deg) translateY(30px);
+        box-shadow: none;
+    }
+}
+@keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: rotateY(180deg) translateY(30px);
+        box-shadow: none;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: rotateY(0deg) translateY(0px);
+        box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 0.15);
+    }
+}
+@keyframes fadeOutRight{
+    0%{
+        opacity: 1;
+        visibility: visible;
+        transform: rotateY(0deg) translateY(0px);
+        box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 0.15);
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        transform: rotateY(180deg) translateY(30px);
+        box-shadow: none;
+    }
+}
+@keyframes fadeInRight{
+    0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: rotateY(-180deg) translateY(30px);
+        box-shadow: none;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: rotateY(0deg) translateY(0px);
+        box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@keyframes bounceIn{
+    0%{
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    60%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottomIn{
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTopIn{
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}

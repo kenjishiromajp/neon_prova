@@ -1,0 +1,87 @@
+.svg-biometria{
+    .st0 {
+        fill: #007AC3;
+    }
+
+    .st1 {
+        fill: #F8FBFD;
+    }
+
+    .st2 {
+        fill: none;
+        stroke: #F8FBFD;
+        stroke-width: 0.75;
+        stroke-miterlimit: 10;
+    }
+
+    .st3 {
+        fill: none;
+        stroke: #007AC3;
+        stroke-width: 3;
+        stroke-miterlimit: 10;
+    }
+    .animate-1{
+        transform-origin: 50% 50%;
+        animation: animateBiometria1 5s ease infinite;
+        &:nth-child(2){
+            animation-delay: 2s;
+        }
+        &:nth-child(3){
+            animation-delay: 3s;
+        }
+        &:nth-child(4){
+            animation-delay: 4s;
+        }
+        &:nth-child(5){
+            animation-delay: 5s;
+        }
+        &:nth-child(6){
+            animation-delay: 6s;
+        }
+        &:nth-child(7){
+            animation-delay: 7s;
+        }
+        &:nth-child(8){
+            animation-delay: 8s;
+        }
+        &:nth-child(9){
+            animation-delay: 9s;
+        }
+        &:nth-child(10){
+            animation-delay: 10s;
+        }
+        &:nth-child(11){
+            animation-delay: 11s;
+        }
+        &:nth-child(12){
+            animation-delay: 12s;
+        }
+        &:nth-child(13){
+            animation-delay: 13s;
+        }
+    }
+
+}
+
+@keyframes animateBiometria1{
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    25%{
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    75%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
