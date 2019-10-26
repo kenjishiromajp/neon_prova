@@ -1,7 +1,9 @@
 {
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "npm run gh-pages",
+    "gh-pages": "gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "css-loader": "^0.28.3",
@@ -12,5 +14,8 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
